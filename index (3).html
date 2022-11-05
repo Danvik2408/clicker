@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrap{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width: 250px;
+            height: 200px;
+            background-color: transparent;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 64px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .restart{
+            margin: 100px;
+            width: 250px;
+            height: 100px;
+            background-color: yellow;
+            border: none;
+            border-radius: 10px;
+        }
+        .timer{
+            color: #000;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+        .logo{
+            font-size: 32px;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="timer" id="timerN1"></div>
+        <div class="box" id="box">Click me!</div>
+        <button class="restart" id="restart">Restart</button>
+
+        <div class="logo">
+            <span id="blackTheme">Black </span>or <span id="whiteTheme">White</span>
+        </div>
+    </div>
+
+    <script>
+
+        let n=0
+        let gameTime = 4
+
+
+       
+        box.onclick = function(){
+            box.innerText = ''
+            n++
+            if(n==1){
+        setTimeout(function(){
+            clearInterval(timer)
+            alert('time out')
+            box.innerText = n
+        },5000)
+        let timer = setInterval(function(){
+            timerN1.innerText = gameTime
+            gameTime--
+            console.log(gameTime)
+        },1000)
+            }
+            
+        }
+        box.onmousedown = function(){
+            box.style.boxShadow = "5px 5px 10px #999"
+            box.style.heigth = '245px'
+        }
+        box.onmouseup = function(){
+            box.style.boxShadow = "0px 0px 0px "
+            box.style.heigth = '250px'
+
+        }
+
+        restart.onclick = function(){
+            n=0
+            box.innerText = 0 
+            let gameTime = 4
+
+            box.onclick = function(){
+            n++
+            if(n==1){
+                setTimeout(function(){
+            clearInterval(timer)
+            alert('time out')
+            box.innerText = n
+        },5000)
+        let timer = setInterval(function(){
+            timerN1.innerText = gameTime
+            gameTime--
+            console.log(gameTime)
+        },1000)
+            }
+            
+        }
+
+
+        }
+
+
+        blackTheme.onclick = function(){
+    document.body.style.color="white";
+    document.body.style.backgroundColor="black";
+    box.style.backgroundColor = "white"
+
+}
+whiteTheme.onclick = function(){
+    document.body.style.color="black";
+    document.body.style.backgroundColor="white";
+    box.style.backgroundColor = "black"
+
+
+}
+        
+
+        
+        
+
+    </script>
+    
+</body>
+</html>
